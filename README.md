@@ -1,62 +1,97 @@
-```markdown
-Följ stegen nedan i rätt ordning och var uppmärksam på detaljer
+# GitHub Övning
+
+### Den här övningen förutsätter att du gjort första läxan vi har haft ([v.34](https://ntigbg.github.io/Github-Setup/)) och har laddat ner Git till Windows.
+
+## Del 1: Linux-kommandon
+1. Börja med att starta Git Bash.
+
+2. Git Bash är en primärt en kommandotolk för Git som måste laddas ned till Windows för att du ska kunna jobba med versionshantering och utföra olika kommandon som att exempelvis comitta, pusha och checka ut olika versioner av ett repository. <br> 
+Man kan även använda vissa linux-kommandon som att skapa filer och mappar samt att navigera sig mellan mappar.<br> 
+När man navigerar i en dator via en konsol är det några saker man behöver känna till och tänka på:
+    - Alla kommandon du utför sker i den mapp som du "står i".
+    - Du står alltid i en mapp och du kan se vilken mapp du står i längst till höger, med gul text.
+    ![img](https://i.gyazo.com/5dde3f81f67693310fd186a1e94ba2b0.png)
+    - Alla filer du ändrar, skapar eller tar bort är **permanent** och man kan inte ångra något.
+    
+Här kommer en lista på några basic linux-kommandon som är bra att känna till:
+
+```unix
+ls                  -   listar alla filer och mappar i den mapp som du just nu "står i".
+cd <mapp>           -   går in i den mapp som du skriver in. (Som att dubbelklicka på en mapp i filhanteraren)
+cd ..               -   går tillbaka ur en mapp
+cd                  -   går tillbaka till din hem-mapp. (Din användar-mapp)
+mkdir <mappnamn>    -   skapar en ny mapp med det angivna namnet. Mappen skapas i samma mapp som du står i.
+touch <filnamn>     -   skapar en ny fil med angivet filnamn och filändelse. Filen skapas i den mapp du står i.
+rm <filnamn>        -   tar bort den angivna filen.
+rmdir <mappnamn>    -   tar bort den angivna mappen. (OBS mappen måste vara tom!)
+rm -r <mappnamn>    -   tömmer en hel mapp och tar bort den.
+mv <filnamn> <nytt filnamn> - Döper om en fil.
+mv <mappnamn> <nytt mappnamn> - Döper om en mapp.
+cp <filnamn> <namn på kopia> - Kopierar en fil.
+mv <filnamn> <sökväg> - Flyttar en fil till angiven sökväg.
+
 ```
+*Observera att alla filer och mappar som tas bort med rm-kommandon INTE kan återfinnas i papperskorgen!*
 
-## Skapa konto på GitHub
-1. Skapa ett konto på GitHub <a href="https://github.com/join" target="_blank">här</a>.
-2. Maila sedan ditt fullständiga namn samt användarnamn på GitHub till: [niklas.hjelm@ga.ntig.se](mailto:niklas.hjelm@ga.ntig.se) <br> 
-  Sätt titeln på mailet till GitHub följt av namnet på din klass!
-
-   Exempel:
-   
-```markdown
-Recipient: niklas.hjelm@ga.ntig.se
-Subject: GitHub IT18A
-
-Namn: Niklas Hjelm
-Användarnamn: NiklasHj
-```
-
-
-## Ladda hem Git till Windows
-1. Ladda hem och installera Git till Windows <a href="https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-64-bit.exe" target="_blank">här</a>.
-2. Starta exe-filen och **klicka bara på nästa**. <br>
-    Du behöver INTE ändra förvalda inställningar.
-3. När installationen är klar, **starta Git Bash**. <br>
-![img](https://i.gyazo.com/2dcc1024ae4e608aa920532854bba92d.png)
-4. Skriv in in din mail och användarnamn i konsolen på följande vis:<br>
-
-```markdown
-git config --global user.name "Kalle" 
-git config --global user.email "kalle@ntig.se" 
-```
+### Uppgift:
+#### Läs igenom kommando-listan noga och utför följande steg.
+1. Navigera till ditt skrivbord och skapa en mapp som heter github.
+2. I den mappen ska du skapa en txt-fil som heter introduktion.
+3. Kontrollera att filen blev skapad genom att lista alla filer i mappen du står i.
+4. Gör en kopia av filen som får namnet copy.txt.
+5. Skapa en ny mapp som heter copy_folder.
+6. Flytta copy.txt till mappen copy_folder.
+7. Kontrollera att filen blev flyttad genom att gå in i mappen och lista alla filer.
+8. Ta bort filen copy.txt.
+9. Gå tillbaka till skrivbordet och byt namn på mappen github till junk.
+10. Ta bort mappen junk.
 
 
-## Ladda hem GitHub Desktop
-1. Ladda hem och installera GitHub Desktop <a href="https://central.github.com/deployments/desktop/desktop/latest/win32" target="_blank">här</a>.
-2. Starta exe-filen så kör installationen sig självt.
-3. När installationen är klar, logga in med ditt GitHub-konto på GitHub Desktop.
-4. Du behöver nu skaffa dig ett så kallat repo, som är stället där alla dina filer och kod hamnar.
 
-![img](https://gyazo.com/399b549c039f52d5c2700a83fa142eff.png)
+***
 
-5. Använd ditt användarnamn i GitHub för enkelhetens skull
 
-![img](https://gyazo.com/c81f15b5132f9cdeab0f742aef69c9c0.png)
+## Del 2: Git-kommandon
+#### Denna del kräver att vi inte enbart jobbar i Git Bash men ha alltid konsolen uppe och fö
 
-6. I GitHub Desktop navigera nu till inställnigar <br>
-    *File->Options->Advanced* <br>
-    och välj Git Bash i drop-down fältet för Shell.<br>
-![img](https://gyazo.com/d8e466e57d2a41b1ba39a6d74d2369fe.png)
+1. Börja med att gå till din profil på github.com (www.github.com/<användarnamn>)
+2. Klicka på den gröna knappen, New repository: <br>
+Ge repot ett passande namn, se till att det är publikt och se till att checkboxen **INTE** är ikryssad för att inkludera en "README"-fil.<br>
+![img](https://i.gyazo.com/79712d2715797707a895e96b160b5837.png)
+3. Öppna programmet Git Bash och navigera till skrivbordet.
+4. Skapa en ny mapp som får heta repository.
+5. Gå in i mappen repository och skriv kommandot: ``` git init ``` <br>
+    Detta skapar ett nytt git-repository i din mapp, vilket innebär att hela mappen nu kommer att fungera som ett lokalt repository som kan hålla koll på olika verisioner av allt innehåll i mappen framöver. *(Versioner som du själv får skapa!)*
+6. Skapa nu en ny fil som får heta README.md
+7. Öppna filen via filhanteraren med valfritt textredigeringsprogram och skriv in följande rad:
+    ```
+    # Mitt första repo
+    ```
+8. Spara filen och återgå till Git Bash.
+9. Skriv i konsolen: ```git status ``` <br>
+    Du får då upp information som visar vilka filer i ditt repo som är modifierade sedan föregående version.<br><br>
+    **Nu ska vi spara våran ändring i mappen som en ny commit och sedan lägga upp det publikt på GitHub.** <br>
+10. Skriv in följande rad för att lägga till filen README.md i en ny commit:
+    ```
+    git add README.md
+    ```
+11. För att skapa en ny commit med de tillagda filerna skriver vi följande:
+    ```
+    git commit -m "first commit"
+    ```
+    *Texten inom citattecknen är ett meddelande som förklarar för oss själva och andra vad vi har gjort för ändring i just denna commit.*
+12. Eftersom detta repository endast finns lokalt på din dator just nu måste du vid första commiten koppla ihop det till GitHub och sedan kan du lägga upp det på webben! <br>
+Skriv följande rad för att koppla detta repository till det repository nu i början skapade på GitHub:
+    ```
+    git remote add origin https://github.com/<användarnamn>/<namn på ditt repository>.git
+    ```
+13. Skriv nu följande rad för att "pusha" upp din commit till GitHub:
+    ```
+    git push -u origin master
+    ```
+14. När konsolen laddat klart gå in på ditt  www.github.com/<användarnamn>/<namn på ditt repository> och kolla så att din fil har laddats upp!
 
-7. Tryck på Publish Repository för att ditt repo ska komma upp på GitHub online.
+#### Fortsättning:
+Experimentera gärna runt lite i Git Bash och skapa nya samt ändra befintliga filer, gör nya commits och "pusha" upp dem till GitHub.<br>
+[Här](http://rogerdudler.github.io/git-guide/) finns även en bra sida som sammanfattar många av de grundläggande sakerna man kan göra med Git och GitHub!
 
-![img](https://gyazo.com/c37f79ef51ff1f14b3b2d9249702ca4f.png)
-
-8. VIKTIGT: Bocka ur "Keep this code private"!
-
-![img](https://gyazo.com/5c02447a718331d460b89284af45e8dc.png)
-
-9. För att det ska fungera felfritt måste du starta om din dator.
-
-10. Klart! Nu kan du använda Git och GitHub Desktop på din dator.
