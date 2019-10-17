@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Send Niklas a Message</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="jumbotron text-center" style="background-color: rgb(30, 35, 36)">
+    <h1>Send Niklas a message</h1>
+  </div>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="codeofconduct">'Code' of Conduct</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="testgame">Testgame</a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://warhammer-community.com">Warhammer Community</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <form method="POST" action="/">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" name="email" placeholder="yourEmail@domain.com" required>
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" name="name" placeholder="Your Name or Alias" required>
+          </div>
+          <div class="input-group mb-3">
+              <!--<input class="form-control" type="text" name="message" id="message" placeholder="Your Message" required>-->
+              <textarea class="form-control" rows="5" id="message" name="message" placeholder="Your Message" required></textarea>
+          </div>
+          <div class="col-sm-2">
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

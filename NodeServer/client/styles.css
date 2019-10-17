@@ -1,0 +1,49 @@
+body {
+  background-color: rgb(30, 35, 36);
+  color: rgb(209, 174, 128);
+  font-family: monospace;
+}
+
+img {
+  border: solid 2px rgb(71, 54, 43);
+  padding: 2px;  
+  border-radius: 20px;
+}
+
+img:hover {
+  border: solid 2px rgb(88, 123, 156);
+  padding: 2px;
+}
+
+h1 {
+  padding: 5px;
+  background-color: rgb(30, 35, 36);
+}
+
+.x-navbar .desktop .x-nav > li > a > span {
+  padding: 5px 10px;
+  border: solid rgb(71, 54, 43) 1px;
+}
+
+label { 
+  font-size: 16px;
+}
+
+form {
+  padding: 5px;
+}
+
+* {
+  padding: 0; 
+  margin: 0; 
+}
+
+canvas {
+  background: rgb(134, 128, 114); 
+  display: block; 
+  margin: 0 auto; 
+}
+
+div {
+  padding: 5px;
+}
