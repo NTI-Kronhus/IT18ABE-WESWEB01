@@ -9,6 +9,12 @@ app.use(express.urlencoded())
 
 app.get('/', (req, res) => res.sendFile(__dirname + '\\start.html'))
 
+let users = [{name: "Niklas", age: "33"},{name: "Adam", age: "35"},{name: "Gunilla", age: "32"}]
+
+let user = users.find(apa => { apa.name === "Niklas" })
+
+console.log(user)
+
 app.get('/a', (req, res) => {
   res.sendFile(__dirname + '\\style.css')
 })
